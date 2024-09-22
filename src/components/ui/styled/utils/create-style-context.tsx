@@ -18,8 +18,13 @@ type Recipe = {
 type Slot<R extends Recipe> = keyof ReturnType<R>
 type Options = { forwardProps?: string[] }
 
-const shouldForwardProp = (prop: string, variantKeys: string[], options: Options = {}) =>
-  options.forwardProps?.includes(prop) || (!variantKeys.includes(prop) && !isCssProperty(prop))
+const shouldForwardProp = (
+  prop: string,
+  variantKeys: string[],
+  options: Options = {},
+) =>
+  options.forwardProps?.includes(prop) ||
+  (!variantKeys.includes(prop) && !isCssProperty(prop))
 
 export const createStyleContext = <R extends Recipe>(recipe: R) => {
   const StyleContext = createContext<Record<Slot<R>, string> | null>(null)
@@ -47,7 +52,8 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
       Component,
       {},
       {
-        shouldForwardProp: (prop, variantKeys) => shouldForwardProp(prop, variantKeys, options),
+        shouldForwardProp: (prop, variantKeys) =>
+          shouldForwardProp(prop, variantKeys, options),
       },
     ) as StyledComponent<ElementType>
     const StyledSlotProvider = forwardRef<T, P>((props, ref) => {
@@ -78,7 +84,11 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
     const StyledSlotComponent = forwardRef<T, P>((props, ref) => {
       const slotStyles = useContext(StyleContext)
       return (
-        <StyledComponent {...props} ref={ref} className={cx(slotStyles?.[slot], props.className)} />
+        <StyledComponent
+          {...props}
+          ref={ref}
+          className={cx(slotStyles?.[slot], props.className)}
+        />
       )
     })
     // @ts-expect-error

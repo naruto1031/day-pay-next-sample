@@ -13,7 +13,9 @@ export const RootProvider = withRootProvider<
 >(Tooltip.RootProvider)
 
 export type RootProps = ComponentProps<typeof Root>
-export const Root = withRootProvider<Assign<Tooltip.RootProps, TooltipVariantProps>>(Tooltip.Root)
+export const Root = withRootProvider<
+  Assign<Tooltip.RootProps, TooltipVariantProps>
+>(Tooltip.Root)
 
 export const Arrow = withContext<
   HTMLDivElement,

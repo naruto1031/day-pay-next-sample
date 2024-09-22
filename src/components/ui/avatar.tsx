@@ -11,7 +11,9 @@ export const Avatar = forwardRef<HTMLDivElement, AvatarProps>((props, ref) => {
 
   return (
     <StyledAvatar.Root ref={ref} {...rootProps}>
-      <StyledAvatar.Fallback>{getInitials(name) || <UserIcon />}</StyledAvatar.Fallback>
+      <StyledAvatar.Fallback>
+        {getInitials(name) || <UserIcon />}
+      </StyledAvatar.Fallback>
       <StyledAvatar.Image src={src} alt={name} />
     </StyledAvatar.Root>
   )

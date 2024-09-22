@@ -17,37 +17,41 @@ export interface TreeViewProps extends StyledTreeView.RootProps {
   data: TreeViewData
 }
 
-export const TreeView = forwardRef<HTMLDivElement, TreeViewProps>((props, ref) => {
-  const { data, ...rootProps } = props
+export const TreeView = forwardRef<HTMLDivElement, TreeViewProps>(
+  (props, ref) => {
+    const { data, ...rootProps } = props
 
-  const renderChild = (child: Child) => (
-    <StyledTreeView.Branch key={child.value} value={child.value}>
-      <StyledTreeView.BranchControl>
-        <StyledTreeView.BranchIndicator>
-          <ChevronRightIcon />
-        </StyledTreeView.BranchIndicator>
-        <StyledTreeView.BranchText>{child.name}</StyledTreeView.BranchText>
-      </StyledTreeView.BranchControl>
-      <StyledTreeView.BranchContent>
-        {child.children?.map((child) =>
-          child.children ? (
-            renderChild(child)
-          ) : (
-            <StyledTreeView.Item key={child.value} value={child.value}>
-              <StyledTreeView.ItemText>{child.name}</StyledTreeView.ItemText>
-            </StyledTreeView.Item>
-          ),
-        )}
-      </StyledTreeView.BranchContent>
-    </StyledTreeView.Branch>
-  )
+    const renderChild = (child: Child) => (
+      <StyledTreeView.Branch key={child.value} value={child.value}>
+        <StyledTreeView.BranchControl>
+          <StyledTreeView.BranchIndicator>
+            <ChevronRightIcon />
+          </StyledTreeView.BranchIndicator>
+          <StyledTreeView.BranchText>{child.name}</StyledTreeView.BranchText>
+        </StyledTreeView.BranchControl>
+        <StyledTreeView.BranchContent>
+          {child.children?.map((child) =>
+            child.children ? (
+              renderChild(child)
+            ) : (
+              <StyledTreeView.Item key={child.value} value={child.value}>
+                <StyledTreeView.ItemText>{child.name}</StyledTreeView.ItemText>
+              </StyledTreeView.Item>
+            ),
+          )}
+        </StyledTreeView.BranchContent>
+      </StyledTreeView.Branch>
+    )
 
-  return (
-    <StyledTreeView.Root ref={ref} aria-label={data.label} {...rootProps}>
-      <StyledTreeView.Tree>{data.children.map(renderChild)}</StyledTreeView.Tree>
-    </StyledTreeView.Root>
-  )
-})
+    return (
+      <StyledTreeView.Root ref={ref} aria-label={data.label} {...rootProps}>
+        <StyledTreeView.Tree>
+          {data.children.map(renderChild)}
+        </StyledTreeView.Tree>
+      </StyledTreeView.Root>
+    )
+  },
+)
 
 TreeView.displayName = 'TreeView'
 

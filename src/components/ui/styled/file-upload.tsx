@@ -10,13 +10,19 @@ const { withProvider, withContext } = createStyleContext(fileUpload)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, FileUpload.RootProviderBaseProps>, FileUploadVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, FileUpload.RootProviderBaseProps>,
+    FileUploadVariantProps
+  >
 >(FileUpload.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, FileUpload.RootBaseProps>, FileUploadVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, FileUpload.RootBaseProps>,
+    FileUploadVariantProps
+  >
 >(FileUpload.Root, 'root')
 
 export const Dropzone = withContext<

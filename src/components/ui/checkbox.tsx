@@ -3,24 +3,26 @@ import * as StyledCheckbox from './styled/checkbox'
 
 export interface CheckboxProps extends StyledCheckbox.RootProps {}
 
-export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>((props, ref) => {
-  const { children, ...rootProps } = props
+export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
+  (props, ref) => {
+    const { children, ...rootProps } = props
 
-  return (
-    <StyledCheckbox.Root ref={ref} {...rootProps}>
-      <StyledCheckbox.Control>
-        <StyledCheckbox.Indicator>
-          <CheckIcon />
-        </StyledCheckbox.Indicator>
-        <StyledCheckbox.Indicator indeterminate>
-          <MinusIcon />
-        </StyledCheckbox.Indicator>
-      </StyledCheckbox.Control>
-      {children && <StyledCheckbox.Label>{children}</StyledCheckbox.Label>}
-      <StyledCheckbox.HiddenInput />
-    </StyledCheckbox.Root>
-  )
-})
+    return (
+      <StyledCheckbox.Root ref={ref} {...rootProps}>
+        <StyledCheckbox.Control>
+          <StyledCheckbox.Indicator>
+            <CheckIcon />
+          </StyledCheckbox.Indicator>
+          <StyledCheckbox.Indicator indeterminate>
+            <MinusIcon />
+          </StyledCheckbox.Indicator>
+        </StyledCheckbox.Control>
+        {children && <StyledCheckbox.Label>{children}</StyledCheckbox.Label>}
+        <StyledCheckbox.HiddenInput />
+      </StyledCheckbox.Root>
+    )
+  },
+)
 
 Checkbox.displayName = 'Checkbox'
 

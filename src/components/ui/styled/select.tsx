@@ -11,7 +11,10 @@ export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
   Assign<
-    Assign<HTMLStyledProps<'div'>, Select.RootProviderBaseProps<Select.CollectionItem>>,
+    Assign<
+      HTMLStyledProps<'div'>,
+      Select.RootProviderBaseProps<Select.CollectionItem>
+    >,
     SelectVariantProps
   >
 >(Select.RootProvider, 'root')

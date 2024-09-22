@@ -1,7 +1,10 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { ColorPicker } from '@ark-ui/react/color-picker'
-import { type ColorPickerVariantProps, colorPicker } from 'styled-system/recipes'
+import {
+  type ColorPickerVariantProps,
+  colorPicker,
+} from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
 import { createStyleContext } from './utils/create-style-context'
 
@@ -10,13 +13,19 @@ const { withProvider, withContext } = createStyleContext(colorPicker)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, ColorPicker.RootProviderBaseProps>, ColorPickerVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, ColorPicker.RootProviderBaseProps>,
+    ColorPickerVariantProps
+  >
 >(ColorPicker.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, ColorPicker.RootBaseProps>, ColorPickerVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, ColorPicker.RootBaseProps>,
+    ColorPickerVariantProps
+  >
 >(ColorPicker.Root, 'root')
 
 export const AreaBackground = withContext<

@@ -1,7 +1,10 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { Switch } from '@ark-ui/react/switch'
-import { type SwitchRecipeVariantProps, switchRecipe } from 'styled-system/recipes'
+import {
+  type SwitchRecipeVariantProps,
+  switchRecipe,
+} from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
 import { createStyleContext } from './utils/create-style-context'
 
@@ -10,13 +13,19 @@ const { withProvider, withContext } = createStyleContext(switchRecipe)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLLabelElement,
-  Assign<Assign<HTMLStyledProps<'label'>, Switch.RootProviderBaseProps>, SwitchRecipeVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'label'>, Switch.RootProviderBaseProps>,
+    SwitchRecipeVariantProps
+  >
 >(Switch.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLLabelElement,
-  Assign<Assign<HTMLStyledProps<'label'>, Switch.RootBaseProps>, SwitchRecipeVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'label'>, Switch.RootBaseProps>,
+    SwitchRecipeVariantProps
+  >
 >(Switch.Root, 'root')
 
 export const Control = withContext<

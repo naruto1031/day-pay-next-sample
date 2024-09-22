@@ -10,13 +10,19 @@ const { withProvider, withContext } = createStyleContext(progress)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, Progress.RootProviderBaseProps>, ProgressVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, Progress.RootProviderBaseProps>,
+    ProgressVariantProps
+  >
 >(Progress.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, Progress.RootBaseProps>, ProgressVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, Progress.RootBaseProps>,
+    ProgressVariantProps
+  >
 >(Progress.Root, 'root')
 
 export const Circle = withContext<

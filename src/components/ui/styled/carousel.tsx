@@ -10,13 +10,19 @@ const { withProvider, withContext } = createStyleContext(carousel)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, Carousel.RootProviderBaseProps>, CarouselVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, Carousel.RootProviderBaseProps>,
+    CarouselVariantProps
+  >
 >(Carousel.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, Carousel.RootBaseProps>, CarouselVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, Carousel.RootBaseProps>,
+    CarouselVariantProps
+  >
 >(Carousel.Root, 'root')
 
 export const Control = withContext<

@@ -4,28 +4,32 @@ import * as StyledRatingGroup from './styled/rating-group'
 
 export interface RatingGroupProps extends StyledRatingGroup.RootProps {}
 
-export const RatingGroup = forwardRef<HTMLDivElement, RatingGroupProps>((props, ref) => {
-  const { children, ...rootProps } = props
-  return (
-    <StyledRatingGroup.Root ref={ref} {...rootProps}>
-      {children && <StyledRatingGroup.Label>{children}</StyledRatingGroup.Label>}
-      <StyledRatingGroup.Control>
-        <StyledRatingGroup.Context>
-          {({ items }) =>
-            items.map((index) => (
-              <StyledRatingGroup.Item key={index} index={index}>
-                <StyledRatingGroup.ItemContext>
-                  {(item) => <StarIcon isHalf={item.half} />}
-                </StyledRatingGroup.ItemContext>
-              </StyledRatingGroup.Item>
-            ))
-          }
-        </StyledRatingGroup.Context>
-      </StyledRatingGroup.Control>
-      <StyledRatingGroup.HiddenInput />
-    </StyledRatingGroup.Root>
-  )
-})
+export const RatingGroup = forwardRef<HTMLDivElement, RatingGroupProps>(
+  (props, ref) => {
+    const { children, ...rootProps } = props
+    return (
+      <StyledRatingGroup.Root ref={ref} {...rootProps}>
+        {children && (
+          <StyledRatingGroup.Label>{children}</StyledRatingGroup.Label>
+        )}
+        <StyledRatingGroup.Control>
+          <StyledRatingGroup.Context>
+            {({ items }) =>
+              items.map((index) => (
+                <StyledRatingGroup.Item key={index} index={index}>
+                  <StyledRatingGroup.ItemContext>
+                    {(item) => <StarIcon isHalf={item.half} />}
+                  </StyledRatingGroup.ItemContext>
+                </StyledRatingGroup.Item>
+              ))
+            }
+          </StyledRatingGroup.Context>
+        </StyledRatingGroup.Control>
+        <StyledRatingGroup.HiddenInput />
+      </StyledRatingGroup.Root>
+    )
+  },
+)
 
 RatingGroup.displayName = 'RatingGroup'
 

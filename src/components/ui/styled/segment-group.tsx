@@ -1,7 +1,10 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { SegmentGroup } from '@ark-ui/react/segment-group'
-import { type SegmentGroupVariantProps, segmentGroup } from 'styled-system/recipes'
+import {
+  type SegmentGroupVariantProps,
+  segmentGroup,
+} from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
 import { createStyleContext } from './utils/create-style-context'
 
@@ -19,7 +22,10 @@ export const RootProvider = withProvider<
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, SegmentGroup.RootBaseProps>, SegmentGroupVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, SegmentGroup.RootBaseProps>,
+    SegmentGroupVariantProps
+  >
 >(SegmentGroup.Root, 'root')
 
 export const Indicator = withContext<

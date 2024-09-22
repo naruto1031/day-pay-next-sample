@@ -1,7 +1,10 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { SignaturePad } from '@ark-ui/react/signature-pad'
-import { type SignaturePadVariantProps, signaturePad } from 'styled-system/recipes'
+import {
+  type SignaturePadVariantProps,
+  signaturePad,
+} from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
 import { createStyleContext } from './utils/create-style-context'
 
@@ -19,7 +22,10 @@ export const RootProvider = withProvider<
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, SignaturePad.RootBaseProps>, SignaturePadVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, SignaturePad.RootBaseProps>,
+    SignaturePadVariantProps
+  >
 >(SignaturePad.Root, 'root')
 
 export const ClearTrigger = withContext<

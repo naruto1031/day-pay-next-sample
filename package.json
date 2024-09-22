@@ -7,7 +7,8 @@
     "prepare": "panda codegen",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "biome lint --write ./src",
+    "format": "biome format --write ./src"
   },
   "dependencies": {
     "@ark-ui/react": "^3.12.1",
@@ -16,13 +17,12 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.2",
     "@pandacss/dev": "^0.46.0",
     "@park-ui/panda-preset": "^0.42.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.13",
     "typescript": "^5"
   }
 }

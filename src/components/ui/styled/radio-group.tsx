@@ -10,13 +10,19 @@ const { withProvider, withContext } = createStyleContext(radioGroup)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, RadioGroup.RootProviderBaseProps>, RadioGroupVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, RadioGroup.RootProviderBaseProps>,
+    RadioGroupVariantProps
+  >
 >(RadioGroup.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, RadioGroup.RootBaseProps>, RadioGroupVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, RadioGroup.RootBaseProps>,
+    RadioGroupVariantProps
+  >
 >(RadioGroup.Root, 'root')
 
 export const Indicator = withContext<

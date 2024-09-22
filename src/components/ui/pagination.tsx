@@ -6,37 +6,39 @@ import * as StyledPagination from './styled/pagination'
 
 export interface PaginationProps extends StyledPagination.RootProps {}
 
-export const Pagination = forwardRef<HTMLElement, PaginationProps>((props, ref) => {
-  return (
-    <StyledPagination.Root ref={ref} {...props}>
-      <StyledPagination.PrevTrigger asChild>
-        <IconButton variant="ghost" aria-label="Next Page">
-          <ChevronLeftIcon />
-        </IconButton>
-      </StyledPagination.PrevTrigger>
-      <StyledPagination.Context>
-        {(pagination) =>
-          pagination.pages.map((page, index) =>
-            page.type === 'page' ? (
-              <StyledPagination.Item key={index} {...page} asChild>
-                <Button variant="outline">{page.value}</Button>
-              </StyledPagination.Item>
-            ) : (
-              <StyledPagination.Ellipsis key={index} index={index}>
-                &#8230;
-              </StyledPagination.Ellipsis>
-            ),
-          )
-        }
-      </StyledPagination.Context>
-      <StyledPagination.NextTrigger asChild>
-        <IconButton variant="ghost" aria-label="Next Page">
-          <ChevronRightIcon />
-        </IconButton>
-      </StyledPagination.NextTrigger>
-    </StyledPagination.Root>
-  )
-})
+export const Pagination = forwardRef<HTMLElement, PaginationProps>(
+  (props, ref) => {
+    return (
+      <StyledPagination.Root ref={ref} {...props}>
+        <StyledPagination.PrevTrigger asChild>
+          <IconButton variant="ghost" aria-label="Next Page">
+            <ChevronLeftIcon />
+          </IconButton>
+        </StyledPagination.PrevTrigger>
+        <StyledPagination.Context>
+          {(pagination) =>
+            pagination.pages.map((page, index) =>
+              page.type === 'page' ? (
+                <StyledPagination.Item key={index} {...page} asChild>
+                  <Button variant="outline">{page.value}</Button>
+                </StyledPagination.Item>
+              ) : (
+                <StyledPagination.Ellipsis key={index} index={index}>
+                  &#8230;
+                </StyledPagination.Ellipsis>
+              ),
+            )
+          }
+        </StyledPagination.Context>
+        <StyledPagination.NextTrigger asChild>
+          <IconButton variant="ghost" aria-label="Next Page">
+            <ChevronRightIcon />
+          </IconButton>
+        </StyledPagination.NextTrigger>
+      </StyledPagination.Root>
+    )
+  },
+)
 
 Pagination.displayName = 'Pagination'
 

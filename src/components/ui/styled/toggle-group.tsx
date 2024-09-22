@@ -1,7 +1,10 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { ToggleGroup } from '@ark-ui/react/toggle-group'
-import { type ToggleGroupVariantProps, toggleGroup } from 'styled-system/recipes'
+import {
+  type ToggleGroupVariantProps,
+  toggleGroup,
+} from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
 import { createStyleContext } from './utils/create-style-context'
 
@@ -10,13 +13,19 @@ const { withProvider, withContext } = createStyleContext(toggleGroup)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, ToggleGroup.RootProviderBaseProps>, ToggleGroupVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, ToggleGroup.RootProviderBaseProps>,
+    ToggleGroupVariantProps
+  >
 >(ToggleGroup.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, ToggleGroup.RootBaseProps>, ToggleGroupVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, ToggleGroup.RootBaseProps>,
+    ToggleGroupVariantProps
+  >
 >(ToggleGroup.Root, 'root')
 
 export const Item = withContext<

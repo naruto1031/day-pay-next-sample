@@ -10,13 +10,19 @@ const { withProvider, withContext } = createStyleContext(pagination)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLElement,
-  Assign<Assign<HTMLStyledProps<'nav'>, Pagination.RootProviderBaseProps>, PaginationVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'nav'>, Pagination.RootProviderBaseProps>,
+    PaginationVariantProps
+  >
 >(Pagination.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLElement,
-  Assign<Assign<HTMLStyledProps<'nav'>, Pagination.RootBaseProps>, PaginationVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'nav'>, Pagination.RootBaseProps>,
+    PaginationVariantProps
+  >
 >(Pagination.Root, 'root', { forwardProps: ['page'] })
 
 export const Ellipsis = withContext<

@@ -1,7 +1,10 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { NumberInput } from '@ark-ui/react/number-input'
-import { type NumberInputVariantProps, numberInput } from 'styled-system/recipes'
+import {
+  type NumberInputVariantProps,
+  numberInput,
+} from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
 import { createStyleContext } from './utils/create-style-context'
 
@@ -10,13 +13,19 @@ const { withProvider, withContext } = createStyleContext(numberInput)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, NumberInput.RootProviderBaseProps>, NumberInputVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, NumberInput.RootProviderBaseProps>,
+    NumberInputVariantProps
+  >
 >(NumberInput.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, NumberInput.RootBaseProps>, NumberInputVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, NumberInput.RootBaseProps>,
+    NumberInputVariantProps
+  >
 >(NumberInput.Root, 'root')
 
 export const Control = withContext<

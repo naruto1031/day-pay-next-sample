@@ -27,10 +27,10 @@ export const Description = withContext<
   Assign<HTMLStyledProps<'div'>, Toast.DescriptionProps>
 >(Toast.Description, 'description')
 
-export const Title = withContext<HTMLDivElement, Assign<HTMLStyledProps<'div'>, Toast.TitleProps>>(
-  Toast.Title,
-  'title',
-)
+export const Title = withContext<
+  HTMLDivElement,
+  Assign<HTMLStyledProps<'div'>, Toast.TitleProps>
+>(Toast.Title, 'title')
 
 export {
   ToastContext as Context,

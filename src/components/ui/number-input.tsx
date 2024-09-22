@@ -3,23 +3,27 @@ import * as StyledNumberInput from './styled/number-input'
 
 export interface NumberInputProps extends StyledNumberInput.RootProps {}
 
-export const NumberInput = forwardRef<HTMLDivElement, NumberInputProps>((props, ref) => {
-  const { children, ...rootProps } = props
-  return (
-    <StyledNumberInput.Root ref={ref} {...rootProps}>
-      {children && <StyledNumberInput.Label>{children}</StyledNumberInput.Label>}
-      <StyledNumberInput.Control>
-        <StyledNumberInput.Input />
-        <StyledNumberInput.IncrementTrigger>
-          <ChevronUpIcon />
-        </StyledNumberInput.IncrementTrigger>
-        <StyledNumberInput.DecrementTrigger>
-          <ChevronDownIcon />
-        </StyledNumberInput.DecrementTrigger>
-      </StyledNumberInput.Control>
-    </StyledNumberInput.Root>
-  )
-})
+export const NumberInput = forwardRef<HTMLDivElement, NumberInputProps>(
+  (props, ref) => {
+    const { children, ...rootProps } = props
+    return (
+      <StyledNumberInput.Root ref={ref} {...rootProps}>
+        {children && (
+          <StyledNumberInput.Label>{children}</StyledNumberInput.Label>
+        )}
+        <StyledNumberInput.Control>
+          <StyledNumberInput.Input />
+          <StyledNumberInput.IncrementTrigger>
+            <ChevronUpIcon />
+          </StyledNumberInput.IncrementTrigger>
+          <StyledNumberInput.DecrementTrigger>
+            <ChevronDownIcon />
+          </StyledNumberInput.DecrementTrigger>
+        </StyledNumberInput.Control>
+      </StyledNumberInput.Root>
+    )
+  },
+)
 
 NumberInput.displayName = 'NumberInput'
 

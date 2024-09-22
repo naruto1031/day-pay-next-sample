@@ -14,7 +14,9 @@ export const RootProvider = withRootProvider<
 >(Dialog.RootProvider)
 
 export type RootProps = ComponentProps<typeof Root>
-export const Root = withRootProvider<Assign<Dialog.RootProps, DrawerVariantProps>>(Dialog.Root)
+export const Root = withRootProvider<
+  Assign<Dialog.RootProps, DrawerVariantProps>
+>(Dialog.Root)
 
 export const Backdrop = withContext<
   HTMLDivElement,
@@ -51,20 +53,20 @@ export const Trigger = withContext<
   Assign<HTMLStyledProps<'button'>, Dialog.TriggerBaseProps>
 >(Dialog.Trigger, 'trigger')
 
-export const Header = withContext<HTMLDivElement, Assign<HTMLStyledProps<'div'>, PolymorphicProps>>(
-  ark.div,
-  'header',
-)
+export const Header = withContext<
+  HTMLDivElement,
+  Assign<HTMLStyledProps<'div'>, PolymorphicProps>
+>(ark.div, 'header')
 
-export const Body = withContext<HTMLDivElement, Assign<HTMLStyledProps<'div'>, PolymorphicProps>>(
-  ark.div,
-  'body',
-)
+export const Body = withContext<
+  HTMLDivElement,
+  Assign<HTMLStyledProps<'div'>, PolymorphicProps>
+>(ark.div, 'body')
 
-export const Footer = withContext<HTMLDivElement, Assign<HTMLStyledProps<'div'>, PolymorphicProps>>(
-  ark.div,
-  'footer',
-)
+export const Footer = withContext<
+  HTMLDivElement,
+  Assign<HTMLStyledProps<'div'>, PolymorphicProps>
+>(ark.div, 'footer')
 
 export {
   DialogContext as Context,

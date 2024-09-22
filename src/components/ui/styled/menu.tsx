@@ -8,12 +8,14 @@ import { createStyleContext } from './utils/create-style-context'
 const { withRootProvider, withContext } = createStyleContext(menu)
 
 export type RootProviderProps = ComponentProps<typeof RootProvider>
-export const RootProvider = withRootProvider<Assign<Menu.RootProviderProps, MenuVariantProps>>(
-  Menu.RootProvider,
-)
+export const RootProvider = withRootProvider<
+  Assign<Menu.RootProviderProps, MenuVariantProps>
+>(Menu.RootProvider)
 
 export type RootProps = ComponentProps<typeof Root>
-export const Root = withRootProvider<Assign<Menu.RootProps, MenuVariantProps>>(Menu.Root)
+export const Root = withRootProvider<Assign<Menu.RootProps, MenuVariantProps>>(
+  Menu.Root,
+)
 
 export const Arrow = withContext<
   HTMLDivElement,
@@ -60,10 +62,10 @@ export const ItemIndicator = withContext<
   Assign<HTMLStyledProps<'div'>, Menu.ItemIndicatorBaseProps>
 >(Menu.ItemIndicator, 'itemIndicator')
 
-export const Item = withContext<HTMLDivElement, Assign<HTMLStyledProps<'div'>, Menu.ItemBaseProps>>(
-  Menu.Item,
-  'item',
-)
+export const Item = withContext<
+  HTMLDivElement,
+  Assign<HTMLStyledProps<'div'>, Menu.ItemBaseProps>
+>(Menu.Item, 'item')
 
 export const ItemText = withContext<
   HTMLDivElement,

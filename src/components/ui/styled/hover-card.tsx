@@ -13,9 +13,9 @@ export const RootProvider = withRootProvider<
 >(HoverCard.RootProvider)
 
 export type RootProps = ComponentProps<typeof Root>
-export const Root = withRootProvider<Assign<HoverCard.RootProps, HoverCardVariantProps>>(
-  HoverCard.Root,
-)
+export const Root = withRootProvider<
+  Assign<HoverCard.RootProps, HoverCardVariantProps>
+>(HoverCard.Root)
 
 export const Arrow = withContext<
   HTMLDivElement,

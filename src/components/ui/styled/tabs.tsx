@@ -10,7 +10,10 @@ const { withProvider, withContext } = createStyleContext(tabs)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, Tabs.RootProviderBaseProps>, TabsVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, Tabs.RootProviderBaseProps>,
+    TabsVariantProps
+  >
 >(Tabs.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
@@ -29,10 +32,10 @@ export const Indicator = withContext<
   Assign<HTMLStyledProps<'div'>, Tabs.IndicatorBaseProps>
 >(Tabs.Indicator, 'indicator')
 
-export const List = withContext<HTMLDivElement, Assign<HTMLStyledProps<'div'>, Tabs.ListBaseProps>>(
-  Tabs.List,
-  'list',
-)
+export const List = withContext<
+  HTMLDivElement,
+  Assign<HTMLStyledProps<'div'>, Tabs.ListBaseProps>
+>(Tabs.List, 'list')
 
 export const Trigger = withContext<
   HTMLButtonElement,

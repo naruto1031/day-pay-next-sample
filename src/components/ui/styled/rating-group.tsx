@@ -1,7 +1,10 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { RatingGroup } from '@ark-ui/react/rating-group'
-import { type RatingGroupVariantProps, ratingGroup } from 'styled-system/recipes'
+import {
+  type RatingGroupVariantProps,
+  ratingGroup,
+} from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
 import { createStyleContext } from './utils/create-style-context'
 
@@ -10,13 +13,19 @@ const { withProvider, withContext } = createStyleContext(ratingGroup)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, RatingGroup.RootProviderBaseProps>, RatingGroupVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, RatingGroup.RootProviderBaseProps>,
+    RatingGroupVariantProps
+  >
 >(RatingGroup.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, RatingGroup.RootBaseProps>, RatingGroupVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, RatingGroup.RootBaseProps>,
+    RatingGroupVariantProps
+  >
 >(RatingGroup.Root, 'root')
 
 export const Control = withContext<

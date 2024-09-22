@@ -10,13 +10,19 @@ const { withProvider, withContext } = createStyleContext(tagsInput)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, TagsInput.RootProviderBaseProps>, TagsInputVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, TagsInput.RootProviderBaseProps>,
+    TagsInputVariantProps
+  >
 >(TagsInput.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, TagsInput.RootBaseProps>, TagsInputVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, TagsInput.RootBaseProps>,
+    TagsInputVariantProps
+  >
 >(TagsInput.Root, 'root')
 
 export const ClearTrigger = withContext<

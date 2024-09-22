@@ -2,7 +2,12 @@
 import type { Assign } from '@ark-ui/react'
 import { Field } from '@ark-ui/react/field'
 import { styled } from 'styled-system/jsx'
-import { type FieldVariantProps, field, input, textarea } from 'styled-system/recipes'
+import {
+  type FieldVariantProps,
+  field,
+  input,
+  textarea,
+} from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
 import { createStyleContext } from './utils/create-style-context'
 
@@ -11,7 +16,10 @@ const { withProvider, withContext } = createStyleContext(field)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, Field.RootProviderBaseProps>, FieldVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, Field.RootProviderBaseProps>,
+    FieldVariantProps
+  >
 >(Field.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>

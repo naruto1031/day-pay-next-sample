@@ -11,13 +11,19 @@ const { withProvider, withContext } = createStyleContext(fieldset)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLFieldSetElement,
-  Assign<Assign<HTMLStyledProps<'fieldset'>, Fieldset.RootProviderBaseProps>, FieldsetVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'fieldset'>, Fieldset.RootProviderBaseProps>,
+    FieldsetVariantProps
+  >
 >(Fieldset.Root, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLFieldSetElement,
-  Assign<Assign<HTMLStyledProps<'fieldset'>, Fieldset.RootBaseProps>, FieldsetVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'fieldset'>, Fieldset.RootBaseProps>,
+    FieldsetVariantProps
+  >
 >(Fieldset.Root, 'root')
 
 export const ErrorText = withContext<

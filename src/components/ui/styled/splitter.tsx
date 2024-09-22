@@ -10,13 +10,19 @@ const { withProvider, withContext } = createStyleContext(splitter)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, Splitter.RootProviderBaseProps>, SplitterVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, Splitter.RootProviderBaseProps>,
+    SplitterVariantProps
+  >
 >(Splitter.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, Splitter.RootBaseProps>, SplitterVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, Splitter.RootBaseProps>,
+    SplitterVariantProps
+  >
 >(Splitter.Root, 'root')
 
 export const Panel = withContext<

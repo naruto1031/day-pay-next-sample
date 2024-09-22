@@ -10,13 +10,19 @@ const { withProvider, withContext } = createStyleContext(treeView)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, TreeView.RootProviderBaseProps>, TreeViewVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, TreeView.RootProviderBaseProps>,
+    TreeViewVariantProps
+  >
 >(TreeView.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, TreeView.RootBaseProps>, TreeViewVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, TreeView.RootBaseProps>,
+    TreeViewVariantProps
+  >
 >(TreeView.Root, 'root')
 
 export const BranchContent = withContext<

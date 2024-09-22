@@ -10,13 +10,19 @@ const { withProvider, withContext } = createStyleContext(pinInput)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, PinInput.RootProviderBaseProps>, PinInputVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, PinInput.RootProviderBaseProps>,
+    PinInputVariantProps
+  >
 >(PinInput.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, PinInput.RootBaseProps>, PinInputVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, PinInput.RootBaseProps>,
+    PinInputVariantProps
+  >
 >(PinInput.Root, 'root', { forwardProps: ['mask'] })
 
 export const Control = withContext<

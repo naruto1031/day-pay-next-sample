@@ -10,13 +10,19 @@ const { withProvider, withContext } = createStyleContext(checkbox)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLLabelElement,
-  Assign<Assign<HTMLStyledProps<'label'>, Checkbox.RootProviderBaseProps>, CheckboxVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'label'>, Checkbox.RootProviderBaseProps>,
+    CheckboxVariantProps
+  >
 >(Checkbox.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLLabelElement,
-  Assign<Assign<HTMLStyledProps<'label'>, Checkbox.RootBaseProps>, CheckboxVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'label'>, Checkbox.RootBaseProps>,
+    CheckboxVariantProps
+  >
 >(Checkbox.Root, 'root')
 
 export const Control = withContext<

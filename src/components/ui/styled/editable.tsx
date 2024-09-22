@@ -10,13 +10,19 @@ const { withProvider, withContext } = createStyleContext(editable)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, Editable.RootProviderBaseProps>, EditableVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, Editable.RootProviderBaseProps>,
+    EditableVariantProps
+  >
 >(Editable.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, Editable.RootBaseProps>, EditableVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, Editable.RootBaseProps>,
+    EditableVariantProps
+  >
 >(Editable.Root, 'root')
 
 export const Area = withContext<

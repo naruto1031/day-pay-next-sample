@@ -10,13 +10,19 @@ const { withProvider, withContext } = createStyleContext(qrCode)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, QrCode.RootProviderBaseProps>, QrCodeVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, QrCode.RootProviderBaseProps>,
+    QrCodeVariantProps
+  >
 >(QrCode.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, QrCode.RootBaseProps>, QrCodeVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, QrCode.RootBaseProps>,
+    QrCodeVariantProps
+  >
 >(QrCode.Root, 'root')
 
 export const Frame = withContext<

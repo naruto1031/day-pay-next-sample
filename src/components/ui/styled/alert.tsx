@@ -8,10 +8,10 @@ import { createStyleContext } from './utils/create-style-context'
 const { withProvider, withContext } = createStyleContext(alert)
 
 export type RootProps = ComponentProps<typeof Root>
-export const Root = withProvider<HTMLDivElement, Assign<HTMLStyledProps<'div'>, PolymorphicProps>>(
-  ark.div,
-  'root',
-)
+export const Root = withProvider<
+  HTMLDivElement,
+  Assign<HTMLStyledProps<'div'>, PolymorphicProps>
+>(ark.div, 'root')
 
 export const Content = withContext<
   HTMLDivElement,
@@ -23,10 +23,10 @@ export const Description = withContext<
   Assign<HTMLStyledProps<'div'>, PolymorphicProps>
 >(ark.div, 'description')
 
-export const Icon = withContext<HTMLOrSVGElement, Assign<HTMLStyledProps<'svg'>, PolymorphicProps>>(
-  ark.svg,
-  'icon',
-)
+export const Icon = withContext<
+  HTMLOrSVGElement,
+  Assign<HTMLStyledProps<'svg'>, PolymorphicProps>
+>(ark.svg, 'icon')
 
 export const Title = withContext<
   HTMLHeadingElement,

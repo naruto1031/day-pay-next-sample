@@ -10,13 +10,19 @@ const { withProvider, withContext } = createStyleContext(avatar)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, Avatar.RootProviderBaseProps>, AvatarVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, Avatar.RootProviderBaseProps>,
+    AvatarVariantProps
+  >
 >(Avatar.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, Avatar.RootBaseProps>, AvatarVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, Avatar.RootBaseProps>,
+    AvatarVariantProps
+  >
 >(Avatar.Root, 'root')
 
 export const Fallback = withContext<

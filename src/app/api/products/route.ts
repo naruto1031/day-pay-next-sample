@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from 'next/server'
 
 const productsData = {
   electronics: [
@@ -13,11 +13,11 @@ const productsData = {
     { id: 5, name: 'シャツ' },
     { id: 6, name: 'ジーンズ' },
   ],
-};
+}
 
 export async function GET(request: Request) {
-    const { searchParams } = new URL(request.url);
-    const category = searchParams.get('category') || 'electronics';
-    const products = productsData[category as keyof typeof productsData] || [];
-    return NextResponse.json({ products });
+  const { searchParams } = new URL(request.url)
+  const category = searchParams.get('category') || 'electronics'
+  const products = productsData[category as keyof typeof productsData] || []
+  return NextResponse.json({ products })
 }

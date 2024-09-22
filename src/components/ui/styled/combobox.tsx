@@ -11,7 +11,10 @@ export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
   Assign<
-    Assign<HTMLStyledProps<'div'>, Combobox.RootProviderBaseProps<Combobox.CollectionItem>>,
+    Assign<
+      HTMLStyledProps<'div'>,
+      Combobox.RootProviderBaseProps<Combobox.CollectionItem>
+    >,
     ComboboxVariantProps
   >
 >(Combobox.RootProvider, 'root')
@@ -20,7 +23,10 @@ export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
   Assign<
-    Assign<HTMLStyledProps<'div'>, Combobox.RootBaseProps<Combobox.CollectionItem>>,
+    Assign<
+      HTMLStyledProps<'div'>,
+      Combobox.RootBaseProps<Combobox.CollectionItem>
+    >,
     ComboboxVariantProps
   >
 >(Combobox.Root, 'root')

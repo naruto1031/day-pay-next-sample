@@ -10,13 +10,19 @@ const { withProvider, withContext } = createStyleContext(datePicker)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, DatePicker.RootProviderBaseProps>, DatePickerVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, DatePicker.RootProviderBaseProps>,
+    DatePickerVariantProps
+  >
 >(DatePicker.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, DatePicker.RootBaseProps>, DatePickerVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, DatePicker.RootBaseProps>,
+    DatePickerVariantProps
+  >
 >(DatePicker.Root, 'root')
 
 export const ClearTrigger = withContext<

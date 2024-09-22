@@ -10,13 +10,19 @@ const { withProvider, withContext } = createStyleContext(accordion)
 export type RootProviderProps = ComponentProps<typeof RootProvider>
 export const RootProvider = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, Accordion.RootProviderBaseProps>, AccordionVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, Accordion.RootProviderBaseProps>,
+    AccordionVariantProps
+  >
 >(Accordion.RootProvider, 'root')
 
 export type RootProps = ComponentProps<typeof Root>
 export const Root = withProvider<
   HTMLDivElement,
-  Assign<Assign<HTMLStyledProps<'div'>, Accordion.RootBaseProps>, AccordionVariantProps>
+  Assign<
+    Assign<HTMLStyledProps<'div'>, Accordion.RootBaseProps>,
+    AccordionVariantProps
+  >
 >(Accordion.Root, 'root')
 
 export const ItemContent = withContext<
