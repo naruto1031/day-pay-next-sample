@@ -1,7 +1,7 @@
 import { CategorySelector }from '@/components/organisms/Products/CategorySelector';
 
 async function fetchProducts(category: string) {
-  const res = await fetch(`http://localhost:3000/api/products?category=${category}`);
+  const res = await fetch(`${process.env.API_URL}/api/products?category=${category}`);
   const data = await res.json();
   return data.products;
 }
