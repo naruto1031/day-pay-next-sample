@@ -1,5 +1,4 @@
 import { CategorySelector }from '@/components/organisms/Products/CategorySelector';
-import { Suspense } from 'react';
 
 async function fetchProducts(category: string) {
   const res = await fetch(`http://localhost:3000/api/products?category=${category}`);
